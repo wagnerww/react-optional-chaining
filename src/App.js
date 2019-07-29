@@ -1,6 +1,5 @@
-import React, { Component } from 'react'
-import axios from 'axios'
-// yarn eslint --init
+import React, { Component } from 'react';
+
 const user = {
   login: 'wagnerww',
   name: 'Wagner Ricardo Wagner',
@@ -18,7 +17,7 @@ const user = {
       name: 'React-GarphQL',
     },
   ],
-}
+};
 
 class App extends Component {
   render() {
@@ -26,7 +25,7 @@ class App extends Component {
       <div>
         <strong>Usuário</strong>
         <p>{user.login}</p>
-        <p>{user.details.email}</p>
+        <p>{user.details?.email}</p>
         <strong>Repositórios:</strong>
         {user.repos?.map((repo, index) => (
           <div>
@@ -36,8 +35,8 @@ class App extends Component {
         <p />
         <p />
       </div>
-    )
+    );
   }
 }
 
-export default App
+export default App;
