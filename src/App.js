@@ -1,26 +1,43 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import React, { Component } from 'react'
+import axios from 'axios'
+// yarn eslint --init
+const user = {
+  login: 'wagnerww',
+  name: 'Wagner Ricardo Wagner',
+  details: {
+    email: 'wagnerricardonet@gmial.com',
+  },
+  repos: [
+    {
+      id: 1,
+      name: 'Prisma-Training',
+      stars: 1,
+    },
+    {
+      id: 2,
+      name: 'React-GarphQL',
+    },
+  ],
 }
 
-export default App;
+class App extends Component {
+  render() {
+    return (
+      <div>
+        <strong>Usuário</strong>
+        <p>{user.login}</p>
+        <p>{user.details.email}</p>
+        <strong>Repositórios:</strong>
+        {user.repos?.map((repo, index) => (
+          <div>
+            <p>{repo.name}</p>
+          </div>
+        ))}
+        <p />
+        <p />
+      </div>
+    )
+  }
+}
+
+export default App
